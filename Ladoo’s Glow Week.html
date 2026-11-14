@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ladoo’s Glow Week</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Zen+Maru+Gothic:wght@500;700&family=Nunito:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#ffc9e0;--card:#fff2f8;--ink:#5a2540;--soft:#8a4a68;--gold:#ff7fb3;--gold2:#ff9ec9;--green:#c43c7e;--rose:#ffe3ef;--line:#f5a9cb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2d1624;--card:#3d2033;--ink:#ffe6f1;--soft:#e0a9c4;--gold:#ff8fbd;--gold2:#6b2a4a;--green:#ff9cc6;--rose:#5a2745;--line:#5e3350}}
+:root[data-theme="dark"]{--bg:#2d1624;--card:#3d2033;--ink:#ffe6f1;--soft:#e0a9c4;--gold:#ff8fbd;--gold2:#6b2a4a;--green:#ff9cc6;--rose:#5a2745;--line:#5e3350}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:radial-gradient(circle at 12% 8%,var(--gold2),transparent 40%),radial-gradient(circle at 90% 35%,var(--rose),transparent 45%),var(--bg);background-attachment:fixed;color:var(--ink);font:400 17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,8vw,4.2rem);font-weight:700}h2{font-size:1.9rem}h3{font-size:1.25rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:.4rem;padding:.6rem 1rem;overflow-x:auto;align-items:center}
+nav b{font-family:Fraunces,serif;margin-right:auto;white-space:nowrap;font-size:1.15rem}
+nav a{color:var(--ink);text-decoration:none;padding:.4rem .9rem;border-radius:99px;white-space:nowrap;font-weight:600;font-size:.95rem}
+nav a.on{background:linear-gradient(135deg,#ff8fbd,#ff6fa8);color:#fff}
+nav a:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+main{max-width:860px;margin:0 auto;padding:2rem 1.2rem 4rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:1.2rem 1.3rem;margin:0 0 1rem}
+.card.rose{background:var(--rose);border-color:transparent}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+.btn{font:700 1rem Nunito,sans-serif;background:linear-gradient(135deg,#ff8fbd,#ff6fa8);color:#fff;box-shadow:0 6px 16px rgba(255,111,168,.4);border:0;border-radius:99px;padding:.7rem 1.4rem;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;border:2px solid var(--gold);color:var(--ink)}
+.box{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.l{width:46px;height:46px;border-radius:50%;border:2px dashed var(--gold);display:grid;place-items:center;font-size:.8rem;font-weight:700;color:var(--soft)}
+.l.f{border:0;background:radial-gradient(circle at 35% 30%,#ffd6e8,#ff6fa8 75%);color:#fff;box-shadow:inset -3px -4px 0 rgba(160,30,90,.2);font-size:0}
+.l.f::after{content:"💖";font-size:1.2rem}
+.hero{text-align:center;padding:2rem 0 1rem}
+.big-l{width:150px;height:150px;margin:0 auto 1rem;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe0ee,#ff6fa8 75%);box-shadow:inset -10px -12px 0 rgba(160,30,90,.2),0 14px 30px rgba(255,111,168,.45);display:grid;place-items:center;font-size:3.4rem;cursor:pointer;border:0;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(4deg)}}
+@media (prefers-reduced-motion:reduce){.big-l{animation:none}}
+.sub{color:var(--soft)}
+label.t{display:flex;gap:.7rem;align-items:flex-start;padding:.5rem 0;cursor:pointer}
+input[type=checkbox]{width:22px;height:22px;accent-color:var(--green);margin-top:.15rem;flex:none}
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem}
+.tabs button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:.4rem .9rem;font:700 .95rem Nunito;cursor:pointer}
+.tabs button.on{background:var(--green);color:#fff;border-color:var(--green)}
+ul.p{padding-left:1.2rem;margin:.3rem 0}
+.cups{display:flex;gap:.4rem;flex-wrap:wrap}
+.cups button{width:42px;height:54px;border-radius:6px 6px 14px 14px;border:2px solid var(--green);background:transparent;font-size:1.2rem;cursor:pointer}
+.cups button.on{background:linear-gradient(#9fd6e8,#5fb0d0)}
+.time{font:700 3rem Fraunces,serif;text-align:center}
+small{color:var(--soft)}
+h1{background:linear-gradient(90deg,#ff6fa8,#c64fa0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card{box-shadow:0 8px 22px rgba(255,111,168,.16);border-radius:26px}
+.card:hover{transform:rotate(-.6deg) translateY(-2px);transition:transform .2s}
+.fl,.cf{position:fixed;pointer-events:none;z-index:9}
+.fl{bottom:-30px;animation:up linear forwards}
+@keyframes up{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.cf{left:50%;top:40%;animation:pop 1s ease-out forwards}
+@keyframes pop{to{transform:translate(var(--x),var(--y)) rotate(360deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){.fl,.cf{display:none}.card:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.mf{animation:none}}
+::selection{background:#ff8fbd;color:#fff}
+h1,h2,h3,nav b,.time{font-family:Fredoka,'Zen Maru Gothic',sans-serif}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(rgba(255,111,168,.2) 1.5px,transparent 1.5px);background-size:18px 18px;pointer-events:none;z-index:0}
+main{position:relative;z-index:1}
+.card{border:2.5px solid var(--gold);box-shadow:5px 5px 0 rgba(255,111,168,.35)}
+h2::before{content:'✿ ';color:var(--gold)}h2::after{content:' ✦';color:var(--gold)}
+.jp{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;color:var(--green);letter-spacing:.08em;margin:0 0 .3rem}
+.xp{height:16px;border-radius:99px;border:2px solid var(--gold);overflow:hidden;margin-top:.5rem;background:var(--card)}
+.xp i{display:block;height:100%;background:repeating-linear-gradient(45deg,#ff8fbd,#ff8fbd 8px,#ffb3d1 8px,#ffb3d1 16px);transition:width .5s}
+.mas{position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:8;display:flex;flex-direction:column;align-items:flex-end;gap:.7rem}
+.bub{position:relative;background:#fff;color:#5a2540;border:2.5px solid #ff9fc4;border-radius:22px;padding:.6rem .9rem;box-shadow:4px 4px 0 rgba(255,111,168,.3);max-width:220px;font-weight:700;font-size:.9rem}
+.bub[hidden]{display:none}
+.bub::after{content:'';position:absolute;bottom:-12px;right:24px;border:10px solid transparent;border-top-color:#ff9fc4;border-bottom:0}
+.mf{width:62px;height:62px;border-radius:50%;border:3px solid #ff9fc4;background:#fff0f6;font-size:2rem;cursor:pointer;box-shadow:4px 4px 0 rgba(255,111,168,.4);animation:bob 3s ease-in-out infinite}
+.tr{position:fixed;pointer-events:none;z-index:9;transform:translate(-50%,-50%);animation:tr .8s ease-out forwards}
+@keyframes tr{to{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + 30px)) scale(.3) rotate(90deg)}}
+@media (prefers-reduced-motion:reduce){.tr{display:none}}
+body{cursor:url('data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%2728%27 height=%2728%27><text y=%2722%27 font-size=%2722%27>🦋</text></svg>') 4 4,auto}
+</style></head><body>
+<nav aria-label="Pages"><b>🎀 Ladoo’s Glow Week</b>
+<a href="#home" data-r="home">Home</a><a href="#plan" data-r="plan">7 days</a><a href="#today" data-r="today">Today</a><a href="#eat" data-r="eat">Eat</a><a href="#buddy" data-r="buddy">Gym buddy</a><a href="#pookie" data-r="pookie">Pookie corner</a></nav>
+<main id="app"></main>
+<div class='mas'><div class='bub' id='mb' hidden></div><button class='mf' id='mf' aria-label='Pinky says hi'>🐱</button></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+var DAYS=[
+{n:"Day 1",t:"Wake-up & wake-the-body",w:["5 min easy walk or march in place","Bodyweight squats 3×12","Wall push-ups 3×10","Glute bridges 3×15","Plank 3×20 sec"]},
+{n:"Day 2",t:"Lower body sculpt",w:["Sumo squats 3×15","Reverse lunges 3×10 each leg","Donkey kicks 3×12 each side","Calf raises 3×20","Wall sit 2×30 sec"]},
+{n:"Day 3",t:"Core & posture",w:["Dead bug 3×10","Bird dog 3×8 each side","Side plank 2×20 sec each","Cat-cow 2 min","Chin tucks & shoulder rolls 1 min"]},
+{n:"Day 4",t:"Walk & stretch day",w:["25–30 min brisk walk (indoors or terrace is fine)","Step-ups on a stair 3×12","10 min full-body stretch"]},
+{n:"Day 5",t:"Arms & back",w:["Incline push-ups on a table 3×8","Chair dips 3×8","Superman hold 3×10 sec","Arm circles 2 min","Doorframe chest stretch 1 min"]},
+{n:"Day 6",t:"Full-body glow circuit",w:["Repeat Day 1 and Day 2 moves, 2 rounds","Rest 45 sec between moves","3 min cool-down breathing"]},
+{n:"Day 7",t:"Gentle reset",w:["20 min easy yoga or slow walk","Prep healthy meals for next week","Write down how you feel and what felt easier"]}];
+var DAILY=["Move (today’s workout)","Drink 8 glasses of water","Protein + veggies on 2 meals","Sleep by a steady time (7–8 hrs)"];
+var MEALS=[["Breakfast","Veg omelette or besan chilla + 1 roti, or oats with fruit and nuts"],["Lunch","1 roti or small rice + dal + sabzi + salad + a bowl of dahi"],["Snack","Roasted chana, fruit, nuts, or a small piece of dark chocolate"],["Dinner","Hearty: 1 or 2 rotis + chicken or paneer curry + dal + sabzi + salad, eaten a couple of hours before bed"]];
+var NOTES=["You’ve got this, Ladoo! ✨","Cute and strong, that is you 💖","Ladoo, you showed up. That is the whole win.","Soft heart, strong legs. 💪","Your body is not a project, it’s your home.","Tiny steps still move you forward.","You are sweet but you are not to be messed with.","Hydrate, hype yourself, repeat."];
+var S={d:{},w:{},f:{}};
+try{S=JSON.parse(localStorage.getItem("lw")||"")||S}catch(e){}
+function save(){try{localStorage.setItem("lw",JSON.stringify(S))}catch(e){}}
+function done(i){var a=S.d[i]||[];return a.filter(Boolean).length>=5}
+function pct(){return DAYS.filter(function(_,i){return done(i)}).length}
+function box(){var h='<div class="box" role="img" aria-label="'+pct()+' of 7 ladoos collected">';for(var i=0;i<7;i++)h+='<div class="l'+(done(i)?' f':'')+'">'+(i+1)+'</div>';return h+'</div>'}
+var cur=0;
+function home(){return '<div class="hero"><button class="big-l" id="bl" aria-label="Tap for a sweet note">🍬</button><p class="jp">✦ Sparkle Week for Ladoo ✦</p><h1>Hi Ladoo, ready to glow? 💗</h1><p class="sub">A gentle 7-day home plan. No gym, no crash diets, just small daily wins that help you feel lighter, stronger and prettier posture-wise.</p><a class="btn" href="#plan">See my week</a> <a class="btn ghost" href="#today">Start today</a> <a class="btn ghost" href="#buddy">Meet Pinky 🎀</a><p id="note" class="sub" style="min-height:2em;margin-top:1.2rem" aria-live="polite">Tap the ladoo 👆</p></div><h2>Your ladoo box</h2><p class="sub">Finish a day to turn each empty ladoo into a sparkly pink one. Collect all 7.</p>'+xp()+box()+'<div class="card rose"><h3>Ladoo’s glow promise 🎀</h3><p>Every walk, every glass of water and every stretch is you being sweet to yourself. Show up for 7 days and feel lighter, stronger and so confident, pookie! 💗✨</p></div>'}
+function plan(){var d=DAYS[cur];var h='<h2>Your 7-day plan</h2><p class="sub">About 20–25 minutes a day. Warm up 3 min, move, then stretch.</p><div class="tabs" role="tablist">';DAYS.forEach(function(x,i){h+='<button class="'+(i==cur?'on':'')+'" data-d="'+i+'">'+x.n+'</button>'});h+='</div><div class="card"><h3>'+d.n+': '+d.t+'</h3><ul class="p">';d.w.forEach(function(x){h+='<li>'+x+'</li>'});h+='</ul></div><div class="card"><h3>Every day</h3><ul class="p"><li>Water: 8 glasses</li><li>Protein and veggies at two meals</li><li>10 min sunlight and a short walk after dinner</li><li>Sleep 7–8 hours</li></ul></div><a class="btn" href="#today">Track today</a>';return h}
+function today(){var i=S.cur||0;if(i>6)i=6;var d=DAYS[i],a=S.d[i]||[];var h='<h2>Today’s tracker</h2><div class="tabs">';DAYS.forEach(function(x,k){h+='<button class="'+(k==i?'on':'')+'" data-t="'+k+'">'+x.n+'</button>'});h+='</div><div class="card"><h3>'+d.t+'</h3><small>Tick everything to win a ladoo</small><div style="margin-top:.5rem">';var items=[d.n+" workout done"].concat(DAILY);items.forEach(function(x,k){h+='<label class="t"><input type="checkbox" data-c="'+k+'"'+(a[k]?' checked':'')+'>'+x+'</label>'});h+='</div></div>';
+var w=(S.w[i]||0);h+='<div class="card"><h3>Water cups</h3><div class="cups">';for(var k=1;k<=8;k++)h+='<button data-w="'+k+'" class="'+(k<=w?'on':'')+'" aria-label="Glass '+k+'">💧</button>';h+='</div></div>';
+h+='<div class="card"><h3>2-minute stretch timer</h3><div class="time" id="tm">2:00</div><p style="text-align:center"><button class="btn" id="go">Start</button></p></div><h3>Your box</h3>'+xp()+box();return h}
+function eat(){var h='<h2>Eat well, no starving</h2><p class="sub">Normal desi food, balanced plate. Half veggies, a quarter protein, a quarter carbs. Eat slowly, stop when comfortable.</p>';MEALS.forEach(function(m){h+='<div class="card"><h3>'+m[0]+'</h3><p>'+m[1]+'</p></div>'});h+='<div class="card rose"><h3>Gentle rules</h3><ul class="p"><li>Skip sugary drinks, keep chai small</li><li>Fried and sweets: yes sometimes, a small portion</li><li>Never skip meals, it backfires</li></ul></div>';return h}
+function pookie(){return '<h2>Pookie corner 🌸</h2><div class="grid"><div class="card"><h3>Compliment me</h3><p id="cm" aria-live="polite">Press the button.</p><button class="btn" id="cb">Hype me</button></div><div class="card"><h3>Posture check</h3><p>Ears over shoulders, shoulders over hips. Do it now, then every time you sip water.</p></div><div class="card"><h3>Evening glow ritual</h3><ul class="p"><li>Warm water and a 5 min stretch</li><li>Phone away 30 min before bed</li><li>Write 1 thing you did well</li></ul></div><div class="card"><h3>Pick my reward</h3><p id="rw">A new hair clip, a movie night, or a long bath.</p><button class="btn ghost" id="rb">Surprise me</button></div></div>'}
+var raf=0,H3={},MV={squat:'Squats',jack:'Jumping jacks',raise:'Lateral raises'};
+function buddy(){var h=`<h2>Gym buddy 🎀</h2><p class='sub'>Meet Pinky, your cute gym buddy! Pick a move and work out together. Drag her to spin around.</p><div class='card' style='padding:.5rem'><div id='c3' style='height:360px;touch-action:pan-y'></div><p id='reps' class='sub' style='text-align:center;margin:.4rem 0' aria-live='polite'>Squats time! 💖</p><div class='tabs' style='justify-content:center'>`;Object.keys(MV).forEach(function(k,i){h+=`<button data-m='${k}' class='${i?'':'on'}'>${MV[k]}</button>`});return h+'</div></div>'}
+function stop3d(){cancelAnimationFrame(raf);if(H3.r)H3.r.dispose();H3={}}
+function initBuddy(){var el=document.getElementById('c3');
+if(!window.THREE){el.innerHTML=`<p style='padding:2rem;text-align:center'>3D could not load. Check your internet and refresh.</p>`;return}
+try{var T=THREE,w=el.clientWidth||320,h=360,sc=new T.Scene(),cam=new T.PerspectiveCamera(40,w/h,.1,50);cam.position.set(0,1.5,7);cam.lookAt(0,1.2,0);
+var r=new T.WebGLRenderer({antialias:true,alpha:true});r.setSize(w,h);r.setPixelRatio(Math.min(devicePixelRatio,2));el.appendChild(r.domElement);
+sc.add(new T.AmbientLight(0xffffff,.85));var dl=new T.DirectionalLight(0xffffff,.7);dl.position.set(3,5,4);sc.add(dl);
+var M=function(c){return new T.MeshStandardMaterial({color:c,roughness:.55})};
+var sp=function(rd,c,x,y,z,sx,sy,sz){var m=new T.Mesh(new T.SphereGeometry(rd,24,18),M(c));m.position.set(x,y,z);m.scale.set(sx||1,sy||1,sz||1);return m};
+var cy=function(rd,ln,c,y){var m=new T.Mesh(new T.CylinderGeometry(rd,rd,ln,16),M(c));m.position.y=y;return m};
+var SK=0xffd9c2,PK=0xff7fb5,PU=0xc64fa0,HR=0x4a2b3a,ch=new T.Group();sc.add(ch);
+var fl=new T.Mesh(new T.CircleGeometry(1.7,40),M(0xffb3d1));fl.rotation.x=-Math.PI/2;fl.position.y=-.02;sc.add(fl);
+ch.add(sp(.5,PK,0,1.05,0,1,1.15,.85),sp(.32,PU,0,.62,0,1.1,.7,.9),sp(.5,SK,0,1.95,0,1.05,1,1),sp(.53,HR,0,2.03,-.1),sp(.2,HR,0,2.36,.3,1.5,.7,.6),sp(.14,HR,.36,2.18,.3,.8,1.7,.6),sp(.14,HR,-.36,2.18,.3,.8,1.7,.6));
+function ear(s){var c=new T.Mesh(new T.ConeGeometry(.16,.34,4),M(PK));c.position.set(s*.28,2.64,0);c.rotation.z=-s*.3;ch.add(c)}ear(1);ear(-1);
+function tail(s){var p=new T.Group();p.position.set(s*.52,2.3,-.05);p.add(sp(.08,PK,0,0,0),sp(.17,HR,0,-.32,0,.9,2,.9));ch.add(p);return p}
+var tR=tail(1),tL=tail(-1);
+function eyes(s){var g=new T.Group();g.position.set(s*.2,1.97,0);g.add(sp(.14,0x4a2b3a,0,0,.43,1,1.25,.35),sp(.12,0xffffff,0,0,.445,1,1.25,.35),sp(.1,0xff5fa2,0,0,.47,1,1.2,.3),sp(.05,0x2b1020,0,0,.5,1,1.2,.4),sp(.035,0xffffff,s*-.03,.07,.52,1,1,.4),sp(.02,0xffffff,s*.03,-.05,.52,1,1,.4));ch.add(g);return g}
+var eR=eyes(1),eL=eyes(-1);
+ch.add(sp(.1,0xff9fc4,.32,1.83,.36,1,.8,.4),sp(.1,0xff9fc4,-.32,1.83,.36,1,.8,.4));
+var SPK=[];for(var i=0;i<12;i++){var st=new T.Mesh(new T.OctahedronGeometry(.06+Math.random()*.04),new T.MeshBasicMaterial({color:i%2?0xffffff:0xffc2e0}));st.userData={a:Math.random()*6.28,r:1.1+Math.random()*.6,y:.4+Math.random()*2.2,sp:.4+Math.random()*.6};sc.add(st);SPK.push(st)}
+var mo=new T.Mesh(new T.TorusGeometry(.07,.015,8,16,Math.PI),M(0xc2406f));mo.position.set(0,1.82,.47);mo.rotation.z=Math.PI;ch.add(mo);
+function arm(s){var p=new T.Group();p.position.set(s*.62,1.45,0);p.add(sp(.16,PK,0,0,0),cy(.1,.7,SK,-.37),sp(.13,SK,0,-.76,0));var d=new T.Group();d.position.y=-.78;var bar=cy(.035,.4,0x888888,0);bar.rotation.x=Math.PI/2;d.add(bar,sp(.1,PU,0,0,.2),sp(.1,PU,0,0,-.2));p.add(d);ch.add(p);return p}
+function leg(s){var p=new T.Group();p.position.set(s*.22,.62,0);p.add(cy(.13,.6,PU,-.3),sp(.17,0xffffff,0,-.62,.08,1,.6,1.5));ch.add(p);return p}
+var aR=arm(1),aL=arm(-1),lR=leg(1),lL=leg(-1);
+var mv='squat',t0=performance.now(),rep=0,spin=0,dr=false,lx=0,rp=document.getElementById('reps'),cv=r.domElement;
+cv.onpointerdown=function(e){dr=true;lx=e.clientX};cv.onpointermove=function(e){if(dr){spin+=(e.clientX-lx)*.012;lx=e.clientX}};cv.onpointerup=cv.onpointerleave=function(){dr=false};
+H3={r:r,set:function(m){mv=m;t0=performance.now();rep=0;rp.textContent=MV[m]+' time! 💖'}};
+var PR={squat:2.4,jack:1.4,raise:2.2};
+function tick(now){raf=requestAnimationFrame(tick);var t=(now-t0)/1000,P=PR[mv],ph=t/P*Math.PI*2,e=(1-Math.cos(ph))/2,n=Math.floor(t/P);
+ch.position.y=0;ch.rotation.set(0,spin,0);aR.rotation.set(0,0,0);aL.rotation.set(0,0,0);lR.rotation.set(0,0,0);lL.rotation.set(0,0,0);
+if(mv=='squat'){ch.position.y=-.23*e;lR.rotation.z=.9*e;lL.rotation.z=-.9*e;aR.rotation.x=aL.rotation.x=-1.5*e}
+else if(mv=='jack'){ch.position.y=.15*Math.sin(ph/2);aR.rotation.z=3*e;aL.rotation.z=-3*e;lR.rotation.z=.5*e;lL.rotation.z=-.5*e}
+else if(mv=='raise'){aR.rotation.z=1.55*e;aL.rotation.z=-1.55*e}
+eR.scale.y=eL.scale.y=(now%3200)<130?.1:1;tR.rotation.z=.1+Math.sin(ph*2)*.12;tL.rotation.z=-.1-Math.sin(ph*2)*.12;SPK.forEach(function(q){var u=q.userData,a=u.a+now*.001*u.sp;q.position.set(Math.cos(a)*u.r,u.y+Math.sin(now*.002+u.a)*.1,Math.sin(a)*u.r);q.rotation.y=a*3;q.scale.setScalar(.7+Math.sin(now*.004+u.a)*.3)});
+if(n!==rep){rep=n;rp.textContent=MV[mv]+': rep '+n+' '+['You got this! 💪','Amazing! ✨','So cute! 💖','Yay! 🔥','Nice one, Ladoo! 🎀'][n%5];if(n%5==0)burst()}
+r.render(sc,cam)}
+raf=requestAnimationFrame(tick);
+document.querySelectorAll('[data-m]').forEach(function(b){b.onclick=function(){H3.set(b.dataset.m);document.querySelectorAll('[data-m]').forEach(function(x){x.classList.toggle('on',x==b)})}});
+}catch(err){el.innerHTML=`<p style='padding:2rem;text-align:center'>3D is not supported on this device.</p>`}}
+var R={home:home,plan:plan,today:today,eat:eat,pookie:pookie,buddy:buddy},tmr;
+function go(){var r=(location.hash||"#home").slice(1);if(!R[r])r="home";document.querySelectorAll("nav a").forEach(function(a){a.classList.toggle("on",a.dataset.r==r)});clearInterval(tmr);stop3d();document.getElementById("app").innerHTML=R[r]();window.scrollTo(0,0);bind(r);say(GR[r])}
+function rnd(a){return a[Math.floor(Math.random()*a.length)]}
+function bind(r){var q=function(s){return document.querySelector(s)};if(r=='buddy')initBuddy();
+if(r=="home")q("#bl").onclick=function(){q("#note").textContent=rnd(NOTES);burst()};
+if(r=="pookie"){q("#cb").onclick=function(){q("#cm").textContent=rnd(NOTES)};q("#rb").onclick=function(){q("#rw").textContent=rnd(["Go buy a cute water bottle","Do a face mask night","Order your favourite chai spot treat","Try a new nail colour"])}}
+document.querySelectorAll("[data-d]").forEach(function(b){b.onclick=function(){cur=+b.dataset.d;go()}});
+document.querySelectorAll("[data-t]").forEach(function(b){b.onclick=function(){S.cur=+b.dataset.t;save();go()}});
+document.querySelectorAll("[data-c]").forEach(function(b){b.onchange=function(){var i=S.cur||0;S.d[i]=S.d[i]||[];S.d[i][+b.dataset.c]=b.checked;save();go();if(b.checked&&done(i))burst()}});
+document.querySelectorAll("[data-w]").forEach(function(b){b.onclick=function(){var i=S.cur||0,v=+b.dataset.w;S.w[i]=(S.w[i]==v)?v-1:v;S.d[i]=S.d[i]||[];S.d[i][2]=S.w[i]>=8;save();go()}});
+if(r=="today"){q("#go").onclick=function(){var s=120,e=q("#tm");clearInterval(tmr);tmr=setInterval(function(){s--;e.textContent=Math.floor(s/60)+":"+("0"+s%60).slice(-2);if(s<=0){clearInterval(tmr);e.textContent="Done, gorgeous ✨"}},1000)}}}
+function burst(){var E=["💖","🌸","✨","🎀","💕","🦋"];for(var k=0;k<22;k++){var s=document.createElement("span");s.className="cf";s.textContent=rnd(E);s.style.setProperty("--x",(Math.random()*500-250)+"px");s.style.setProperty("--y",(Math.random()*400-250)+"px");document.body.appendChild(s);setTimeout(function(e){e.remove()},1000,s)}}
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches)setInterval(function(){var s=document.createElement("span");s.className="fl";s.textContent=rnd(["💗","🌸","✨","🎀"]);s.style.left=Math.random()*95+"vw";s.style.fontSize=(14+Math.random()*16)+"px";s.style.animationDuration=(6+Math.random()*5)+"s";document.body.appendChild(s);setTimeout(function(e){e.remove()},11000,s)},1100);
+document.addEventListener("click",function(e){if(e.target.closest("button,a,input,label"))return;var s=document.createElement("span");s.className="cf";s.textContent="✨";s.style.left=e.clientX+"px";s.style.top=e.clientY+"px";s.style.setProperty("--x","0px");s.style.setProperty("--y","-40px");document.body.appendChild(s);setTimeout(function(){s.remove()},1000)});
+var AQ=['You’ve got this, Ladoo! 💪','So cute! ✨','Amazing, you did it! 🌸','Go go go! 🔥','One step at a time 💖','Sip some water! 💧'];
+var GR={home:'Hi Ladoo! Ready to glow? ✨',plan:'Pick a day and I will cheer for you! 💪',today:'Tick your boxes and win ladoos! 🍬',eat:'Yummy and healthy! 🍛',pookie:'Pookie time! Cuteness overload 🎀',buddy:'Work out with me, Ladoo! 🏋️'};
+function say(t){var b=document.getElementById('mb');b.hidden=false;b.textContent=t;clearTimeout(say.t);say.t=setTimeout(function(){b.hidden=true},3800)}
+function xp(){var p=pct(),T=['Cute rookie','Sparkle trainee','Cute fighter','Pink ranger','Glow knight','Idol athlete','Queen of the gym','LEGEND 👑'];return `<div class='card'><b>Ladoo Lv.${p+1}</b> <small>${T[p]}</small><div class='xp'><i style='width:${p/7*100}%'></i></div></div>`}
+document.getElementById('mf').onclick=function(){say(rnd(AQ))};
+var lt=0;document.addEventListener('pointermove',function(e){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;var n=performance.now();if(n-lt<45)return;lt=n;var s=document.createElement('span');s.className='tr';s.textContent=['🦋','✨','🌸','🎀','⭐'][Math.floor(Math.random()*5)];s.style.left=e.clientX+'px';s.style.top=e.clientY+'px';s.style.fontSize=(10+Math.random()*12)+'px';s.style.setProperty('--dx',(Math.random()*40-20)+'px');document.body.appendChild(s);setTimeout(function(){s.remove()},800)});
+window.addEventListener("hashchange",go);go();
+</script></body></html>
